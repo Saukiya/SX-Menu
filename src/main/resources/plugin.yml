@@ -1,0 +1,19 @@
+name: SX-Menu
+main: github.saukiya.sxmenu.SXMenu
+version: 1.0.0
+author: Saukiya
+api-version: 1.13
+
+depend:
+- PlaceholderAPI
+
+softdepend:
+- Vault
+
+commands:
+  sxmenu:
+    aliases: [sm]
+
+permissions:
+  sx-menu.use:
+    default: true

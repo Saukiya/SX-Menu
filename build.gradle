@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'github.saukiya'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.extendedclip.com/content/repositories/placeholderapi/"}
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+    maven { url "https://papermc.io/repo/repository/maven-public/" }
+    maven { url "https://repo.codemc.org/repository/maven-public" }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation fileTree('lib')
+    implementation 'org.openjdk.nashorn:nashorn-core:15.3'
+    implementation 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+    implementation "com.github.MilkBowl:VaultAPI:1.+"
+    implementation 'me.clip:placeholderapi:2.10.+'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}

@@ -1,0 +1,29 @@
+Title: "&c&l这个就是DROPPER"
+Type: DROPPER
+Layout:
+  - "c c"
+  - " g "
+  - "c c"
+Node:
+  g:
+    id: emerald
+    name: "测试"
+    lore:
+      - "右键： &m增加20金币&c死亡"
+      - ""
+    #close: true
+    action:
+      RIGHT:
+        yes-commands:
+          - "suicide"
+  c:
+    id: white stained glass pane
+    name: "我是个玻璃"
+    lore:
+      - "左右?"
+    action:
+      LEFT:
+        close: true
+      RIGHT:
+        open: Default
+        cooldown: 0

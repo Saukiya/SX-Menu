@@ -1,0 +1,66 @@
+Title: "&7&l测试普通ui"
+Command: cmd
+OpenLore: '打开菜单'
+#Type: Chest / HOPPER / DROPPER
+Layout:
+  - "ccccccccc"
+  - "c g   s c"
+  - "ccccccccc"
+#  - - "ccccccccc"
+#    - "c   g   c"
+#    - "ccccccccc"
+#  - - "ccccccccc"
+#    - "c   g   c"
+#    - "ccccccccc"
+Node:
+  g:
+    id: apple
+    name: "&c测试"
+    lore:
+      - "&3左键： 扣掉10金币，并且执行公告，1秒后执行公告+个人消息"
+      - "&a右键： 增加20金币"
+      - "&cShift左键： awsl"
+      - ""
+      - "&7%server_tps_1%"
+    enchant: true
+    #close: true
+    action:
+      LEFT:
+        yes-commands:
+          - "[CONSOLE] bc console test"
+          - "[DELAY] 20"
+          - "[BC] bc test"
+          - "[MESSAGE] message test"
+        money: 10
+      RIGHT:
+        yes-commands:
+          - "[CONSOLE] eco give %player% 20"
+      SHIFT_LEFT:
+        yes-commands:
+          - "[DELAY] 20"
+          - "[CHAT] 苟..."
+          - "[DELAY] 20"
+          - "[CHAT] 国..."
+          - "[DELAY] 20"
+          - "[CHAT] 之..."
+          - "[DELAY] 20"
+          - "suicide"
+        cooldown: 8000
+        close: true
+  c:
+    id: white stained glass pane
+    name: "我是个玻璃"
+    lore:
+      - "左右?"
+      - "时间: %server_time_MM-dd HH:mm:ss%"
+    action:
+      LEFT:
+        close: true
+      RIGHT:
+        open: DefaultType1
+        cooldown: 0
+  s:
+    id: player head
+    name: "&e%player_name%"
+#    获取头颅的感觉真卡
+    skullName: "%player_uuid%"

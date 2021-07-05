@@ -1,0 +1,15 @@
+PLAYER:
+  TAKE_MONEY: '&8[&aMenu&8] &7扣除了相应的金币 &7[&c{0}&7]'
+  NO_MENU: '&8[&aMenu&8] &c没有找到指定的菜单呢'
+  NO_MONEY: '&8[&aMenu&8] &c你没有足够的金币噢 &7[&c{0}&7]'
+  NO_PERMISSION: '&8[&aMenu&8] &c你没有指定的权限噢 &7[&c{0}&7]'
+ADMIN:
+  NO_PERMISSION_CMD: '&8[&aMenu&8] &c你没有权限执行此指令'
+  NO_CMD: '&8[&aMenu&8] &c未找到此子指令:{0}'
+  NO_FORMAT: '&8[&aMenu&8] &c格式错误!'
+  NO_ONLINE: '&8[&aMenu&8] &c玩家不在线或玩家不存在!'
+  NO_CONSOLE: '&8[&aMenu&8] &c控制台不允许执行此指令!'
+  PLUGIN_RELOAD: '&8[&aMenu&8] &c插件已重载'
+COMMAND:
+  OPEN: 打开菜单
+  RELOAD: 重新加载这个插件的配置

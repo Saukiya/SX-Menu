@@ -1,0 +1,30 @@
+Title: "&c&l特殊的界面 另一可用为 DROPPER"
+Type: HOPPER
+Layout:
+  - "c g c"
+Node:
+  g:
+    id: gold ingot
+    name: "&c测试"
+    lore:
+      - "&a右键： 增加20金币"
+      - ""
+      - "&7只给你金币了，示范很累的"
+      - "&7没有default.see权限将看不到该图标"
+    permission: default.see
+    #close: true
+    action:
+      RIGHT:
+        yes-commands:
+          - "[CONSOLE] eco give %player% 20"
+  c:
+    id: white stained glass pane
+    name: "我是个玻璃"
+    lore:
+      - "左右?"
+    action:
+      LEFT:
+        close: true
+      RIGHT:
+        open: DefaultType2
+        cooldown: 0
