@@ -10,6 +10,7 @@ import github.saukiya.sxmenu.util.Config;
 import github.saukiya.sxmenu.util.Message;
 import github.saukiya.sxmenu.util.MoneyUtil;
 import lombok.Getter;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -47,6 +48,7 @@ public class SXMenu extends JavaPlugin {
     }
 
     public void onEnable() {
+        Metrics metrics = new Metrics(this, 12018);
         long oldTimes = System.currentTimeMillis();
         this.menuDataManager = new MenuDataManager();
         if (Bukkit.getPluginManager().isPluginEnabled("Vault")) {
