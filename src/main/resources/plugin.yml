@@ -1,8 +1,8 @@
 name: SX-Menu
 main: github.saukiya.sxmenu.SXMenu
-version: 1.0.0
+version: $version
 author: Saukiya
-api-version: 1.13
+api-version: 1.17
 
 depend:
 - PlaceholderAPI

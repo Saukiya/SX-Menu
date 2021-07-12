@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
 }
 
 group 'github.saukiya'
@@ -7,20 +8,33 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.extendedclip.com/content/repositories/placeholderapi/"}
-    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
-    maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
-    maven { url "https://papermc.io/repo/repository/maven-public/" }
-    maven { url "https://repo.codemc.org/repository/maven-public" }
-    maven { url 'https://jitpack.io' }
+    // Github Project
+    maven {url "https://jitpack.io"}
+    // Bukkit Spigot-api
+    maven {url "https://hub.spigotmc.org/nexus/content/groups/public/"}
+    // Aliyun SDK
+    maven {url "https://maven.aliyun.com/nexus/content/groups/public/"}
 }
 
 dependencies {
-    implementation fileTree('lib')
-    implementation 'org.openjdk.nashorn:nashorn-core:15.3'
-    implementation 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
-    implementation "com.github.MilkBowl:VaultAPI:1.+"
-    implementation 'me.clip:placeholderapi:2.10.+'
-    implementation 'org.projectlombok:lombok:1.18.20'
+    compileOnly fileTree('lib')
+    compileOnly 'org.openjdk.nashorn:nashorn-core:15.3'
+    compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+    compileOnly "com.github.MilkBowl:VaultAPI:1.+"
+    compileOnly 'com.github.PlaceholderAPI:PlaceholderAPI:2.10.9'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    implementation 'org.bstats:bstats-bukkit:2.2.+'
+}
+
+shadowJar {
+    // 过滤未使用的依赖
+    minimize()
+
+    // bstats重定向
+    relocate ('org.bstats', 'github.saukiya.sxmenu.bstats')
+}
+
+processResources {
+    expand(version: version)
 }
